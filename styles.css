@@ -45,20 +45,26 @@ header {
     width: 100%;
     height: 100%;
     background-color: rgba(0,0,0,0.4);
+    overflow-y: auto; /* Allow vertical scrolling */
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: 15% auto;
+    margin: 5% auto; /* Reduced top margin */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 90%;
     max-width: 600px;
+    position: relative; /* Add this */
+    max-height: 90vh; /* Set maximum height */
+    overflow-y: auto; /* Allow content to scroll */
 }
 
 .close {
     color: #aaa;
-    float: right;
+    position: absolute; /* Change to absolute positioning */
+    top: 10px;
+    right: 20px;
     font-size: 28px;
     font-weight: bold;
     cursor: pointer;
@@ -78,10 +84,17 @@ header {
     padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
+    display: block; /* Change to block */
     font-size: 16px;
-    margin: 4px 2px;
+    margin: 20px auto 0; /* Center the button and add top margin */
     cursor: pointer;
+    width: 100%; /* Make button full width */
+    max-width: 300px; /* Limit maximum width */
+}
+
+#buy-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 .image-gallery {
@@ -89,6 +102,8 @@ header {
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 1rem;
+    max-height: 300px; /* Limit gallery height */
+    overflow-y: auto; /* Allow scrolling in gallery */
 }
 
 .gallery-image {
@@ -99,3 +114,37 @@ header {
     border-radius: 5px;
     cursor: pointer;
 }
+
+/* ... (rest of the styles) ... */
+.status {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.status-dot.available {
+    background-color: green;
+}
+
+.status-dot.unavailable {
+    background-color: red;
+}
+
+.status-dot.out-of-stock {
+    background-color: black;
+}
+
+#buy-button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ... (rest of the styles) ... */

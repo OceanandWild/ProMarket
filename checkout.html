@@ -3,41 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProMarket Checkout</title>
+    <title id="checkout-title">ProMarket Checkout</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="checkout-styles.css">
 </head>
 <body>
     <header>
-        <h1>ProMarket Checkout</h1>
+        <h1 id="checkout-header">ProMarket Checkout</h1>
+        <select id="language-selector">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+        </select>
     </header>
     <main id="checkout-form">
         <div id="step1" class="step">
-            <h2>Step 1: Personal Information</h2>
+            <h2 id="step1-title">Step 1: Personal Information</h2>
             <input type="text" id="name" placeholder="Full Name" required>
             <input type="email" id="email" placeholder="Email" required>
-            <button onclick="nextStep(2)">Next</button>
+            <button id="step1-next" onclick="nextStep(2)">Next</button>
         </div>
         <div id="step2" class="step">
-            <h2>Step 2: Shipping Address</h2>
+            <h2 id="step2-title">Step 2: Shipping Address</h2>
             <input type="text" id="address" placeholder="Address" required>
             <input type="text" id="city" placeholder="City" required>
             <input type="text" id="zip" placeholder="ZIP Code" required>
-            <button onclick="nextStep(3)">Next</button>
+            <button id="step2-next" onclick="nextStep(3)">Next</button>
         </div>
         <div id="step3" class="step">
-            <h2>Step 3: Payment Method</h2>
+            <h2 id="step3-title">Step 3: Payment Method</h2>
             <select id="payment-method">
-                <option value="in-person">In Person</option>
+                <option value="in-person" id="in-person-option">In Person</option>
             </select>
-            <button onclick="completePurchase()">Complete Purchase</button>
+            <button id="complete-purchase" onclick="completePurchase()">Complete Purchase</button>
         </div>
         <div id="confirmation" class="step">
-            <h2>✅</h2>
-            <p>Purchase completed successfully.</p>
-            <p id="redirect-message">Redirecting to WhatsApp in <span id="countdown">5</span> seconds...</p>
+            <!-- Confirmation message will be dynamically added here -->
+        </div>
+        <div id="error" class="step">
+            <!-- Error message will be dynamically added here -->
         </div>
     </main>
+    <script src="translations.js"></script>
     <script src="checkout-script.js"></script>
 </body>
 </html>
