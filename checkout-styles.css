@@ -1,0 +1,39 @@
+
+#checkout-form {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.step {
+    display: none;
+}
+
+.step:first-child {
+    display: block;
+}
+
+input, select, button {
+    display: block;
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#confirmation {
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+#confirmation h2 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
