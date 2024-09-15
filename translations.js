@@ -83,8 +83,8 @@ const translations = {
                 images: ["https://media.discordapp.net/attachments/1279989465993056288/1284287176477249608/IMG_20240913_161834.jpg?ex=66e61523&is=66e4c3a3&hm=6eff852595a10f9b7c16e98d584531cac2353380e4b0100788a313c58afcc28c&=&format=webp&width=295&height=393", "https://cdn.discordapp.com/attachments/1279989465993056288/1284287177135489156/IMG_20240913_161850.jpg?ex=66e61523&is=66e4c3a3&hm=d451f61f7778827b100b69d16b421e8c93045f097d034b82a4662c9b74052c5d&", "https://cdn.discordapp.com/attachments/1279989465993056288/1284287177915633785/IMG_20240913_161915.jpg?ex=66e61524&is=66e4c3a4&hm=38dc3441c041cc86df292ee08a007366729c4160f45247efe1b30bf0e1c687dd&", "https://cdn.discordapp.com/attachments/1279989465993056288/1284287178804953110/IMG_20240913_162004.jpg?ex=66e61524&is=66e4c3a4&hm=426f2da5b46a6f6854e905b6207644abfe1b5a7805df917828569e5c1c342d56&", "https://cdn.discordapp.com/attachments/1279989465993056288/1284287179517853766/IMG_20240913_161953.jpg?ex=66e61524&is=66e4c3a4&hm=463344f78e157e5141d86c122ec55bab017107539e22f639206786e2dcd8ab74&", "https://cdn.discordapp.com/attachments/1279989465993056288/1284287180465897573/IMG_20240913_161929.jpg?ex=66e61524&is=66e4c3a4&hm=ec8a9985f358afe68287283bde8c2143a0e3d705c297fceec8f9233877016ae5&", "https://cdn.discordapp.com/attachments/1279989465993056288/1284287181250101249/IMG_20240913_162943.jpg?ex=66e61524&is=66e4c3a4&hm=0d0287057d0a47a1e58e2e807fe123164bce276a4aecfce312044b2e590ad30a&", "https://cdn.discordapp.com/attachments/1279989465993056288/1284287181896286229/IMG_20240913_165754.jpg?ex=66e61525&is=66e4c3a5&hm=494d25933a29ebc6167994f222cb89dcc5d51ef5872d68a547ff611d20037040&"],
             },
             {
-                name: "Producto 3",
-                description: "Este es el producto 3",
+                name: "",
+                description: "",
                 status: "disponible"
             }
         ]

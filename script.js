@@ -36,12 +36,12 @@ let baseProducts = [
     {
         id: 2,
         price: 1000,
-        images: ["https://media.discordapp.net/attachments/1279989465993056288/1284287176477249608/IMG_20240913_161834.jpg?ex=66e61523&is=66e4c3a3&hm=6eff852595a10f9b7c16e98d584531cac2353380e4b0100788a313c58afcc28c&=&format=webp&width=295&height=393", "https://media.discordapp.net/attachments/1279989465993056288/1284287177135489156/IMG_20240913_161850.jpg?ex=66e61523&is=66e4c3a3&hm=d451f61f7778827b100b69d16b421e8c93045f097d034b82a4662c9b74052c5d&=&format=webp&width=295&height=393", "https://media.discordapp.net/attachments/1279989465993056288/1284287177915633785/IMG_20240913_161915.jpg?ex=66e61524&is=66e4c3a4&hm=38dc3441c041cc86df292ee08a007366729c4160f45247efe1b30bf0e1c687dd&=&format=webp&width=295&height=393", "https://media.discordapp.net/attachments/1279989465993056288/1284287178804953110/IMG_20240913_162004.jpg?ex=66e61524&is=66e4c3a4&hm=426f2da5b46a6f6854e905b6207644abfe1b5a7805df917828569e5c1c342d56&=&format=webp&width=295&height=393", "https://media.discordapp.net/attachments/1279989465993056288/1284287179517853766/IMG_20240913_161953.jpg?ex=66e61524&is=66e4c3a4&hm=463344f78e157e5141d86c122ec55bab017107539e22f639206786e2dcd8ab74&=&format=webp&width=295&height=393", "https://media.discordapp.net/attachments/1279989465993056288/1284287180465897573/IMG_20240913_161929.jpg?ex=66e61524&is=66e4c3a4&hm=ec8a9985f358afe68287283bde8c2143a0e3d705c297fceec8f9233877016ae5&=&format=webp&width=295&height=393", "https://media.discordapp.net/attachments/1279989465993056288/1284287181250101249/IMG_20240913_162943.jpg?ex=66e61524&is=66e4c3a4&hm=0d0287057d0a47a1e58e2e807fe123164bce276a4aecfce312044b2e590ad30a&=&format=webp&width=295&height=393", "https://media.discordapp.net/attachments/1279989465993056288/1284287181896286229/IMG_20240913_165754.jpg?ex=66e61525&is=66e4c3a5&hm=494d25933a29ebc6167994f222cb89dcc5d51ef5872d68a547ff611d20037040&=&format=webp&width=295&height=393"],
+        images: ["https://media.discordapp.net/attachments/1279989465993056288/1284287176477249608/IMG_20240913_161834.jpg?ex=66e61523&is=66e4c3a3&hm=6eff852595a10f9b7c16e98d584531cac2353380e4b0100788a313c58afcc28c&=&format=webp&width=295&height=393", "https://media.discordapp.net/attachments/1279989465993056288/1284287177135489156/IMG_20240913_161850.jpg?ex=66e61523&is=66e4c3a3&hm=d451f61f7778827b100b69d16b421e8c93045f097d034b82a4662c9b74052c5d&=&format=webp&width=295&height=393", "https://media.discordapp.net/attachments/1279989465993056288/1284287177915633785/IMG_20240913_161915.jpg?ex=66e61524&is=66e4c3a4&hm=38dc3441c041cc86df292ee08a007366729c4160f45247efe1b30bf0e1c687dd&=&format=webp&width=295&height=393", "https://media.discordapp.net/attachments/1279989465993056288/1284287178804953110/IMG_20240913_162004.jpg?ex=66e61524&is=66e4c3a4&hm=426f2da5b46a6f6854e905b6207644abfe1b5a7805df917828569e5c1c342d56&=&format=webp&width=295&height=393", "https://media.discordapp.net/attachments/1279989465993056288/1284287179517853766/IMG_20240913_161953.jpg?ex=66e61524&is=66e4c3a4&hm=463344f78e157e5141d86c122ec55bab017107539e22f639206786e2dcd8ab74&=&format=webp&width=295&height=393", "https://media.discordapp.net/attachments/1279989465993056288/1284287180465897573/IMG_20240913_161929.jpg?ex=66e61524&is=66e4c3a4&hm=ec8a9985f358afe68287283bde8c2143a0e3d705c297fceec8f9233877016ae5&=&format=webp&width=295&height=393", "https://media.discordapp.net/attachments/1279989465993056288/1284287181250101249/IMG_20240913_162943.jpg?ex=66e766a4&is=66e61524&hm=e4d43e70f8040b929ca9bd3a03d51a357cc86e6d231af45b06b07c753633e393&=&format=webp&width=295&height=393", "https://media.discordapp.net/attachments/1279989465993056288/1284287181896286229/IMG_20240913_165754.jpg?ex=66e766a5&is=66e61525&hm=52218a4a48e4a98f5517bdeb1edd74728602b4234fd8958206e1750167ece3db&=&format=webp&width=295&height=393"],
     },
     {
         id: 3,
-        price: 1650,
-        images: ["product3-1.jpg"],
+        price: 0,
+        images: [""],
     },
 ];
 
@@ -50,6 +50,50 @@ const modal = document.getElementById("product-modal");
 const closeBtn = document.getElementsByClassName("close")[0];
 const buyButton = document.getElementById("buy-button");
 let currentLanguage = 'es';
+let cart = [];
+
+
+// Add cart icon to the top of the page
+const cartIcon = document.createElement("div");
+cartIcon.innerHTML = '🛒';
+cartIcon.style.position = 'fixed';
+cartIcon.style.top = '10px';
+cartIcon.style.right = '10px';
+cartIcon.style.fontSize = '24px';
+cartIcon.style.cursor = 'pointer';
+document.body.appendChild(cartIcon);
+
+// Create cart modal
+const cartModal = document.createElement("div");
+cartModal.id = "cart-modal";
+cartModal.style.display = "none";
+cartModal.style.position = "fixed";
+cartModal.style.zIndex = "1";
+cartModal.style.left = "0";
+cartModal.style.top = "0";
+cartModal.style.width = "100%";
+cartModal.style.height = "100%";
+cartModal.style.overflow = "auto";
+cartModal.style.backgroundColor = "rgba(0,0,0,0.4)";
+
+const cartModalContent = document.createElement("div");
+cartModalContent.style.backgroundColor = "#fefefe";
+cartModalContent.style.margin = "15% auto";
+cartModalContent.style.padding = "20px";
+cartModalContent.style.border = "1px solid #888";
+cartModalContent.style.width = "80%";
+
+const closeCartBtn = document.createElement("span");
+closeCartBtn.innerHTML = "&times;";
+closeCartBtn.style.color = "#aaa";
+closeCartBtn.style.float = "right";
+closeCartBtn.style.fontSize = "28px";
+closeCartBtn.style.fontWeight = "bold";
+closeCartBtn.style.cursor = "pointer";
+
+cartModalContent.appendChild(closeCartBtn);
+cartModal.appendChild(cartModalContent);
+document.body.appendChild(cartModal);
 
 
 const languageSelector = document.getElementById('language-selector');
@@ -160,9 +204,12 @@ function showProductDetails(product) {
     });
     
     updateBuyButton(product.status);
+    updateAddToCartButton(product);
     
     modal.style.display = "block";
 }
+
+
 
 function updateBuyButton(status) {
     switch(status) {
@@ -188,6 +235,82 @@ closeBtn.onclick = function() {
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
+    }
+}
+
+function updateAddToCartButton(product) {
+    const addToCartButton = document.getElementById("add-to-cart-button");
+    if (!addToCartButton) {
+        const newButton = document.createElement("button");
+        newButton.id = "add-to-cart-button";
+        document.querySelector(".modal-content").appendChild(newButton);
+    }
+    
+    const button = document.getElementById("add-to-cart-button");
+    const isInCart = cart.some(item => item.id === product.id);
+    
+    if (isInCart) {
+        button.textContent = "Added to Cart";
+        button.disabled = true;
+    } else {
+        button.textContent = "Add to Cart";
+        button.disabled = false;
+        button.onclick = () => addToCart(product);
+    }
+}
+
+function addToCart(product) {
+    cart.push(product);
+    updateAddToCartButton(product);
+}
+
+cartIcon.onclick = showCart;
+
+function showCart() {
+    let cartContent = "<h2>Your Cart</h2>";
+    let total = 0;
+
+    cart.forEach((item, index) => {
+        cartContent += `
+            <div>
+                <span>${item.name} - ${formatPrice(item.price)}</span>
+                <button onclick="removeFromCart(${index})">X</button>
+            </div>
+        `;
+        total += item.price;
+    });
+
+    cartContent += `<h3>Total: ${formatPrice(total)}</h3>`;
+    cartContent += `<button onclick="goToCheckout()">Go to Checkout</button>`;
+
+    cartModalContent.innerHTML += cartContent;
+    cartModal.style.display = "block";
+}
+
+function removeFromCart(index) {
+    cart.splice(index, 1);
+    showCart();
+}
+
+function goToCheckout() {
+    localStorage.setItem('cart', JSON.stringify(cart));
+    window.location.href = "checkout.html";
+}
+
+closeBtn.onclick = function() {
+    modal.style.display = "none";
+}
+
+closeCartBtn.onclick = function() {
+    cartModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    if (event.target == cartModal) {
+        cartModal.style.display = "none";
     }
 }
 
